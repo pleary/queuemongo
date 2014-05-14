@@ -128,7 +128,6 @@ describe('QueueMongo', function() {
       queue.pushItem({ }, function(err, item) {
         queue.updateItemStatus({ $fail: true }, 'new status', function(err, doc) {
           expect(err).to.be.an.instanceof(Error);
-          expect(err.message).to.eq('Unknown modifier: $fail');
           done();
         });
       });
@@ -164,8 +163,8 @@ describe('QueueMongo', function() {
         setTimeout(function() {
           expect(hook.captured()).to.match(/Waiting/);
           done();
-        }, 10);
-      }, 40);
+        }, 50);
+      }, 50);
     });
   });
 
