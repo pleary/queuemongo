@@ -5,7 +5,7 @@ var expect = require('chai').expect,
 
 describe('QueueMongo', function() {
   before(function(done) {
-    queue = new QueueMongo('127.0.0.1:27017', 'test', function(err) {
+    queue = new QueueMongo('127.0.0.1', 'test', function(err) {
       queue.db.dropCollection('test', done);
     });
   });
