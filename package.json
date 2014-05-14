@@ -1,0 +1,25 @@
+{
+  "name": "queuemongo",
+  "version": "0.1.0",
+  "description": "QueueMongo is a node.js client for a queue service built over MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul test ./node_modules/mocha/bin/_mocha -- -R spec",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "keywords": [
+    "mongodb", "queue", "queuemongo"
+  ],
+  "author": "Patrick Leary <patrick.r.leary@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^1.4.3",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1",
+    "coveralls": "~2.10.0",
+    "mocha-lcov-reporter": "0.0.1"
+  }
+}
