@@ -1,7 +1,5 @@
-QueueMongo
+QueueMongo [![Build Status](https://travis-ci.org/pleary/queuemongo.svg?branch=master)](https://travis-ci.org/pleary/queuemongo) [![Coverage Status](https://coveralls.io/repos/pleary/queuemongo/badge.png)](https://coveralls.io/r/pleary/queuemongo)
 =========
-
-[![Coverage Status](https://coveralls.io/repos/pleary/queuemongo/badge.png)](https://coveralls.io/r/pleary/queuemongo)
 
 QueueMongo is a node.js client for a queue service built over MongoDB.
 
