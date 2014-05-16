@@ -10,7 +10,7 @@ Creating an instance of a queue:
 ```javascript
 var QueueMongo = require('queuemongo');
 
-var q = new QueueMongo('127.0.0.1:27017', 'myQueue', function(err) { });
+var q = new QueueMongo('mongodb://127.0.0.1:27017', 'myQueue', function(err) { });
 ```
 
 Adding items to a queue:
@@ -38,5 +38,7 @@ q.iterate(
 You can run the tests with `npm test`, or run with coverage reporting with `npm test --coverage`.
 
 ## Release History
+
+* 0.1.1 Changed expected DB host to full URI, cleaning up
 
 * 0.1.0 Initial release

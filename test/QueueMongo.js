@@ -5,8 +5,8 @@ var expect = require('chai').expect,
 
 describe('QueueMongo', function() {
   before(function(done) {
-    queue = new QueueMongo('127.0.0.1', 'test', function(err) {
-      queue.db.dropCollection('test', done);
+    queue = new QueueMongo('mongodb://127.0.0.1', 'test', function(err) {
+      queue.empty(done);
     });
   });
 
@@ -16,7 +16,7 @@ describe('QueueMongo', function() {
     });
 
     it('returns an error on connection failure', function(done) {
-      new QueueMongo('wrongDbHost', 'test', function(err) {
+      new QueueMongo('mongodb://wrongDbHost', 'test', function(err) {
         expect(err).to.be.an.instanceof(Error);
         expect(err.message).to.eq('failed to connect to [wrongDbHost:27017]');
         done();
@@ -37,20 +37,6 @@ describe('QueueMongo', function() {
             done();
           });
         });
-      });
-    });
-
-    it('allows a type to be set', function(done) {
-      queue.pushItem({ }, function(err, doc) {
-        expect(doc.type).to.eq('default');
-        done();
-      });
-    });
-
-    it('sets a default type', function(done) {
-      queue.pushItem({ type: 'custom' }, function(err, doc) {
-        expect(doc.type).to.eq('custom');
-        done();
       });
     });
 
